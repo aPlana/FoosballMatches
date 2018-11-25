@@ -27,6 +27,12 @@ const mockedMatches: Array<Match> = [
 ];
 
 export class MatchesList extends Component {
+  constructor(props: {}) {
+    super(props);
+
+    this.addNewMatch = this.addNewMatch.bind(this);
+  }
+
   render() {
     return (
       <View>
@@ -50,6 +56,6 @@ export class MatchesList extends Component {
   }
 
   addNewMatch() {
-    console.log('Add new match!');
+    this.props.navigation.navigate('AddMatch');
   }
 }
